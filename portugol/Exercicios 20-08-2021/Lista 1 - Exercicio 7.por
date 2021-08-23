@@ -5,7 +5,7 @@ e calcula e mostra os valores de x e y. */
 
 programa
 {
-	
+	inclua biblioteca Matematica --> Mat
 	funcao inicio()
 	{
 	
@@ -35,9 +35,9 @@ programa
 
 	y = ((a*f)-(c*d))/((a*eita)-(b*d))
 
-	escreva("O valor de x é "+x+".")
+	escreva("O valor de x é "+Mat.arredondar(x,2)+".")
 
-	escreva("O valor de y é "+y+".")
+	escreva("O valor de y é "+Mat.arredondar(y,2)+".")
 
 	
 	
@@ -48,7 +48,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 312; 
+ * @POSICAO-CURSOR = 740; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
