@@ -12,17 +12,19 @@ programa
 			escreva("Digite o número: ")
 			leia(numero)
 
+			se (numero == 0) {
+			escreva("Neutro")
+			}
 			se (numero < 0) {
 			escreva("O número é negativo")
 			}
-			
 			senao se (numero > 0) {
 			escreva("O número é positivo")
 			}
 			se (numero % 2 == 0) {
-			escreva(" e par")
+			escreva(" e par.")
 			}
-			senao {
+			senao se (numero % 2 != 0) {
 			escreva(" e ímpar.")
 			}
 	}
@@ -32,7 +34,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 420; 
+ * @POSICAO-CURSOR = 574; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
