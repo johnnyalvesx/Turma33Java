@@ -1,59 +1,49 @@
-/* 3. Escreva um programa que lê duas matrizes N1 (4,6) e N2(4,6) e cria:
-a) Uma matriz M1 cujos elementos serão as somas dos elementos 
-de mesma posição das matrizes N1 e N2;
-b) Uma matriz M2 cujos elementos serão as diferenças dos elementos 
-de mesma posição das matrizes N1 e N2.
+/* 2. Um dado é lançado 10 vezes e o valor correspondente é anotado. 
+ *  Faça um programa que gere um vetor com os lançamentos, escreva 
+ *  esse vetor. A seguir determine e imprima a média aritmética dos 
+ *  lançamentos, contabilize e apresente também quantas foram as 
+ *  ocorrências da maior pontuação.
 */
 programa
 {
-	inclua biblioteca Util
+	inclua biblioteca Util
 	funcao inicio()
 	{
+		//variaveis
+		const inteiro QUANTIDADE_LANCAMENTOS=10
+		inteiro lancamentosDado[QUANTIDADE_LANCAMENTOS]
+		real mediaAritmetica=0.00
+		real total=0.00
+		inteiro maiorPonto=0
+		inteiro contadorMaiorPonto=0
 
-		inteiro n1[4][6] //
-		inteiro n2[4][6]
-		inteiro m1[4][6]
-		inteiro m2[4][6]
-
-		para(inteiro linha=0;linha<4; linha++){
-			para(inteiro coluna=0; coluna<6; coluna++){
-				// escreva("Digite o valor em linha ",linha," coluna ",coluna,": ")
-				// leia(n1[linha][coluna])
-				n1[linha][coluna]=sorteia(1,9)
-				n2[linha][coluna]=sorteia(1,9)
-				m1[linha][coluna]=n1[linha][coluna]+n2[linha][coluna]
-				m2[linha][coluna]=n1[linha][coluna]-n2[linha][coluna]
+		//entradas
+		para(inteiro x=0; x<QUANTIDADE_LANCAMENTOS; x++){
+			//carga do vetor
+			lancamentosDado[x]=Util.sorteia(1,6)
+			//pra usuario ver
+			escreva("Lancamento número "+(x+1)+" resultado = "+lancamentosDado[x])
+			escreva("\n")
+			total = total + lancamentosDado[x]
+			se (lancamentosDado[x] >= maiorPonto){
+								
+				se (maiorPonto == lancamentosDado[x]){
+					contadorMaiorPonto++	
+				} 
+				senao {
+					contadorMaiorPonto=1
+				}
+				maiorPonto = lancamentosDado[x]
 			}
-		
+			
 		}
-			escreva("\n")
-		para(inteiro linha=0;linha<4; linha++){
-			para(inteiro coluna=0; coluna<6; coluna++){
-				escreva("["+n1[linha][coluna]+"]")
-			}
-			escreva("\n")
-			}
-			escreva("\n")
-		para(inteiro linha=0;linha<4; linha++){
-			para(inteiro coluna=0; coluna<6; coluna++){
-				escreva("["+n2[linha][coluna]+"]")
-			}
-			escreva("\n")
-			}
-			escreva("\n")
-		para(inteiro linha=0;linha<4; linha++){
-			para(inteiro coluna=0; coluna<6; coluna++){
-				escreva("["+m1[linha][coluna]+"]")
-			}
-			escreva("\n")
-			}
-			escreva("\n")
-		para(inteiro linha=0;linha<4; linha++){
-			para(inteiro coluna=0; coluna<6; coluna++){
-				escreva("["+m2[linha][coluna]+"]")
-			}
-			escreva("\n")
-			}		
+		mediaAritmetica = total / QUANTIDADE_LANCAMENTOS
+		//saidas
+		escreva("\nO total dos lançamentos é: "+total)
+		escreva("\nA média aritmética dos lançamentos é: ",mediaAritmetica)
+		escreva("\nO maior ponto lançado é: "+maiorPonto)
+		escreva("\nQuantidade de vezes que aparece ",maiorPonto," nos lançamentos é ",contadorMaiorPonto)
+		
 	}
 }
 /* $$$ Portugol Studio $$$ 
@@ -61,9 +51,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 828; 
+ * @POSICAO-CURSOR = 748; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {n1, 13, 10, 2}-{n2, 14, 10, 2}-{m1, 15, 10, 2}-{m2, 16, 10, 2};
+ * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
