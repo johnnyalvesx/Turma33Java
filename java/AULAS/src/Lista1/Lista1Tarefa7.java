@@ -42,9 +42,13 @@ public class Lista1Tarefa7 {
 		y = ((a*f)-(c*d))/((a*e)-(b*d));
 		
 		//saídas
+			//classe String
 		//%s - String - texto
+			//tipo
 		//%d - int - número inteiro
 		//%f [%.2f] - double - número real
+		//%c - character - caracter
+		//%b - boolean - lógico 
 		
 			//saída com println
 		System.out.println("\nO valor de X é "+x+" e o de Y é "+y);
@@ -52,5 +56,6 @@ public class Lista1Tarefa7 {
 			//saída com printf
 		System.out.printf("\nO valor de X é %.2f e o de Y é %.3f",x,y);
 		leia.close(); //fechar teclado - perfumaria
+		
 	}
 }
