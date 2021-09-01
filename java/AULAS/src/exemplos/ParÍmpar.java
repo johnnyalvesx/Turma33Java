@@ -12,7 +12,6 @@ public class ParÍmpar {
 		System.out.print("Digite um número inteiro positivo: ");
 		numero = leia.nextInt();
 		
-		//(condição) ? VERDADEIRO : FALSO
 		if (numero < 0) {
 			System.out.print("O número é negativo.");
 		} else if (numero == 0) {

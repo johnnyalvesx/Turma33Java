@@ -22,7 +22,7 @@ public class Lista2Tarefa4 {
 		}
 		else if (numero % 2 == 1) {
 			
-			System.out.printf("\n%d é ímpar e elevado ao quadrado é "+(Math.pow(numero,2)),numero);
+			System.out.printf("\n%d é ímpar e elevado ao quadrado é "+Math.round(Math.pow(numero,2)),numero);
 		}
 		
 	}

@@ -21,18 +21,24 @@ public class Lista2Tarefa1 {
 		System.out.print("Digite o 3º número: ");
 		n3 = leia.nextInt();
 		
-		
-		if(n1 > n2 && n1>n3) {
+		if(n1 > n2 && n1 > n3) {
 		System.out.println("\nO 1º número é o maior.");
 		}
-		else if(n2 > n1 && n2>n3) {
+		else if(n2 > n1 && n2 > n3) {
 			System.out.println("\nO 2º número é o maior.");
 		}
-		else if(n3 > n1 && n3>n2) {
+		else if(n3 > n1 && n3 > n2) {
 			System.out.println("\nO 3º número é o maior.");
-
-		}			
+		}
+		else if(n1 == n2 && n2 > n3) {
+			System.out.println("\nO 3º número é menor que os 2 primeiros.");
+		}
+		else if(n3 == n2 && n2 < n1) {
+			System.out.println("\nO 1º número é o maior.");
+		}
+		else if (n1 == n3 && n3 < n2) {
+			System.out.println("\nO 2º número é o maior.");
+		}
 		
 	}
-
 }
