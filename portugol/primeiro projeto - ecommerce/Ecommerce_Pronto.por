@@ -109,7 +109,7 @@ programa
 		escreva("\n")
 		
 		para(inteiro  l = 1; l <= 10; l++){
-			codigo[l] = "G1-"+l
+			codigo[l] = "G6-"+l
 			valor[l] = 100.00
 			estoque[l] = 10
 			escreva(codigo[l] + "\t | ")
@@ -257,7 +257,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 5290; 
+ * @POSICAO-CURSOR = 3094; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
