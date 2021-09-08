@@ -30,6 +30,7 @@ public class Lista5Tarefa4 {
 				}
 			}
 		}
+		
 		System.out.print("\nA somatória total é: " + total);
 		System.out.print("\nA somatória da diagonal principal é de: " + diagonal);
 
