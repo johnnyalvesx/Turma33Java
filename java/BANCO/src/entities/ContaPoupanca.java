@@ -10,12 +10,16 @@ public class ContaPoupanca extends Conta {
 		super(numero, cpf);
 		this.diaAniversarioPoupanca = diaAniversarioPoupanca;
 	}
-
+	public ContaPoupanca(int numero, String cpf, double saldo, boolean ativo, int diaAniversarioPoupanca) {
+		super (numero, cpf, saldo, ativo);
+		this.diaAniversarioPoupanca = diaAniversarioPoupanca;
+	}
+	
 	// encapsulamento
 	public int getDiaAniversarioPoupanca() {
-		return diaAniversarioPoupanca;
+		return this.diaAniversarioPoupanca;
 	}
-
+	
 	public void setDiaAniversarioPoupanca(int diaAniversarioPoupanca) {
 		this.diaAniversarioPoupanca = diaAniversarioPoupanca;
 	}

@@ -11,12 +11,18 @@ public class ContaEmpresa extends Conta{
 			this.emprestimoEmpresa = emprestimoEmpresa;
 		}
 		
+		public ContaEmpresa(int numero, String cpf, double saldo, boolean ativo, double emprestimoEmpresa) {
+			super(numero, cpf, saldo, ativo);
+			this.emprestimoEmpresa = emprestimoEmpresa;
+			
+		}
 		
 	// encapsulation
 		public double getEmprestimoEmpresa() {
 			return emprestimoEmpresa;
 		}
 
+		
 
 		public void setEmprestimoEmpresa(double emprestimoEmpresa) {
 			this.emprestimoEmpresa = emprestimoEmpresa;
@@ -27,8 +33,7 @@ public class ContaEmpresa extends Conta{
 		{
 			super.credito(emprestimo);
 			this.emprestimoEmpresa -= emprestimo;
-			System.out.println("Saldo atual empréstimo R$"+this.emprestimoEmpresa);
-			
+			System.out.println("Saldo atual emprestimo R$ "+this.emprestimoEmpresa);
 		}
 	
 }

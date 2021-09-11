@@ -10,6 +10,10 @@ public class ContaEstudantil extends Conta {
 		super(numero, cpf);
 		this.limiteEstudantil = limiteEstudantil;
 	}
+	public ContaEstudantil (int numero, String cpf, double saldo, boolean ativo, double limiteEstudantil) {
+		super(numero, cpf, saldo, ativo);
+		this.limiteEstudantil = limiteEstudantil;
+	}
 
 	// encapsulamento
 	public double getLimiteEstudantil() {
@@ -30,6 +34,10 @@ public class ContaEstudantil extends Conta {
 			this.limiteEstudantil = this.limiteEstudantil - limiteSolicitado;
 			super.credito(getSaldo() + limiteSolicitado);
 		}
+	}
+
+	public String getNomeCliente() {
+		return null;
 	}
 
 	// seja o que Deus quiser...

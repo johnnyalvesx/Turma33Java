@@ -16,6 +16,14 @@ public abstract class Conta {
 		this.cpf = cpf;
 	}
 
+	public Conta(int numero, String cpf, double saldo, boolean ativo) {
+		super();
+		this.numero = numero;
+		this.cpf = cpf;
+		this.saldo = saldo;
+		this.ativo = ativo;
+	}
+
 	// encapsulamento - getters and setters
 	public int getNumero() {
 		return numero;

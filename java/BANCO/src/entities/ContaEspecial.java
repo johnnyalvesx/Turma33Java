@@ -1,19 +1,21 @@
 package entities;
 
-public class ContaEspecial extends ContaCorrente {
+public class ContaEspecial extends Conta {
 
-	// atributos
+	// Atributos
 	private double limite;
 
-	// construtor
-
-	public ContaEspecial(int numero, String cpf, int contadorTalao, double limite) {
-		super(numero, cpf, contadorTalao);
+	// Construtor
+	public ContaEspecial(int numero, String cpf, double limite) {
+		super(numero, cpf);
 		this.limite = limite;
-
 	}
-
-	// encapsulamento
+	public ContaEspecial(int numero, String cpf, double saldo, boolean ativo, double limite) {
+		super(numero, cpf, saldo, ativo);
+		this.limite = limite;
+	}
+	
+	// Encapsulamento
 	public double getLimite() {
 		return limite;
 	}
@@ -23,5 +25,12 @@ public class ContaEspecial extends ContaCorrente {
 	}
 
 	// metodos
+
+	public void usarLimite(double valor) {
+
+		this.limite = this.limite - valor;
+		super.credito(valor);
+
+	}
 
 }

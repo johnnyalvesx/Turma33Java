@@ -9,52 +9,107 @@ import entities.ContaEstudantil;
 import entities.ContaPoupanca;
 
 public class TesteConta {
-
 	public static void main(String[] args) {
-		
-		Scanner leia = new Scanner(System.in);
-		
-		ContaEstudantil cest1 = new ContaEstudantil(14,"123.456.789-55",1000);
-		ContaPoupanca cp1 = new ContaPoupanca(156,"222.333.444-58",5);
-		ContaCorrente cc1 = new ContaCorrente(147,"147.258.369-98",3);
-		ContaEspecial cesp1 = new ContaEspecial(148,"369.258.147",3,1000);
-		ContaEmpresa  cemp1 = new ContaEmpresa(123,"159753852.99",50000);
-		
-		char tipo;
-		double valor=0.00;
-		char op;
-		int dia;
-		for (int x=1; x<=10; x++) {
-			System.out.println("MOVIMENTO "+x);
-			System.out.println("SALDO ATUAL R$ :"+cp1.getSaldo());
-			System.out.print("Movimento D-débito ou C-crédito ? :");
-			tipo = leia.next().toUpperCase().charAt(0);
-			System.out.print("Digite o valor :");
-			valor = leia.nextDouble();
-			if (tipo=='D') {
-				cp1.debito(valor);
-			} 
-			else if (tipo=='C') {
-				cp1.credito(valor);
-			} else {
-				System.out.println("Não foi informado um tipo correto...");
+
+		// variáveis
+		Scanner in = new Scanner(System.in);
+		char contaEscolhida = ' ';
+		char movimentoEscolhido = ' ';
+		double valorMovimento = 0.00;
+
+		ContaPoupanca cp1 = new ContaPoupanca(32, "2141234", 1300, true, 7);
+		ContaCorrente cc1 = new ContaCorrente(2, "435654", 1700, true, 1);
+		ContaEmpresa cemp1 = new ContaEmpresa(3, "5653634", 0, true, 5000);
+		ContaEstudantil cest1 = new ContaEstudantil(4, "5466858", 0, true, 500);
+		ContaEspecial cesp1 = new ContaEspecial(5, "45323254", 0, true, 2000);
+
+		System.out.println("DevPag");
+		System.out.println("O banco do dev");
+		System.out.println("\n");
+
+		System.out.println("1 - CONTA POUPANÇA");
+		System.out.println("2 - CONTA CORRENTE");
+		System.out.println("3 - CONTA ESPECIAL");
+		System.out.println("4 - CONTA EMPRESA");
+		System.out.println("5 - CONTA ESTUDANTIL");
+		System.out.println("6 - SAIR");
+		System.out.println("\n");
+		System.out.print("Digite o código da opção selecionada: ");
+		contaEscolhida = in.next().charAt(0);
+
+		if (contaEscolhida == '1') {
+			System.out.println("\n");
+			System.out.println("DevPag");
+			System.out.println("O banco do dev");
+			System.out.println("\n");
+			System.out.println(cp1.getNumero() + " CONTA POUPANÇA");
+
+			System.out.println("Saldo atual: " + cp1.getSaldo());
+			System.out.println("\nMovimento \n D - Débito \n C - Crédito");
+			movimentoEscolhido = in.next().charAt(0);
+			System.out.println("\nDigite o dia de hoje: ");
+			int diaAtual = in.nextInt();
+			if (movimentoEscolhido == 'c') {
+				System.out.println("\nValor do movimento: ");
+				valorMovimento = in.nextDouble();
+
+				cp1.credito(valorMovimento);
+				cp1.correcao(diaAtual);
+				System.out.println("Saldo corrigido é de R$" + cp1.getSaldo());
+
+			} else if (movimentoEscolhido == 'd') {
+				System.out.println("\nValor do movimento: ");
+				valorMovimento = in.nextDouble();
+				cp1.debito(valorMovimento);
+				System.out.println("Saldo corrigido é de R$" + cp1.getSaldo());
+
 			}
-			System.out.println("Continua S/N : ");
-			op = leia.next().toUpperCase().charAt(0);
-			if (op=='N') {
-				
-				break;
+
+		} else if (contaEscolhida == '2') {
+			System.out.println("\n");
+			System.out.println("DevPag");
+			System.out.println("O banco do dev");
+			System.out.println("\n");
+			System.out.println(cc1.getNumero() + " CONTA CORRENTE");
+
+			System.out.println("Saldo atual: " + cc1.getSaldo());
+
+			int controle = 0;
+			while (controle < 3) {
+				System.out.println("\nMovimento \n D - Débito \n C - Crédito");
+				movimentoEscolhido = in.next().charAt(0);
+				System.out.println("\nValor do movimento: ");
+				valorMovimento = in.nextDouble();
+				if (movimentoEscolhido == 'd') {
+					cc1.debito(valorMovimento);
+					System.out.println("Saldo atual: " + cc1.getSaldo());
+					System.out.println("Quer continuar? \nS - Sim \nN - Não");
+					char continuar = in.next().charAt(0);
+					if (continuar == 'n') {
+						break;
+					} else if (continuar == 's') {
+						controle++;
+					}
+				} else if (movimentoEscolhido == 'c') {
+					cc1.credito(valorMovimento);
+					System.out.println("Saldo atual: " + cc1.getSaldo());
+					System.out.println("Quer continuar? \nS - Sim \nN - Não");
+					char continuar = in.next().charAt(0);
+					if (continuar == 'n') {
+						break;
+					} else if (continuar == 's') {
+						controle++;
+					}
+				}
 			}
-			
+			System.out.println("Deseja solicitar cheque? ");
+			char solicitarCheque = in.next().charAt(0);
+			if (solicitarCheque == 's') {
+				System.out.println("Qual a quantidade?");
+				int quantidadeTalao = in.nextInt();
+				cc1.pediTalao(quantidadeTalao);
+				System.out.println(cc1.toString());
+			}
 		}
-		System.out.println("SALDO ATUALIZADO R$ "+cp1.getSaldo());
-		System.out.println("Informe o dia de hoje :");
-		dia = leia.nextInt();
-		cp1.correcao(dia);
-		System.out.println("SALDO FINAL R$ " + cp1.getSaldo());
-		
-		
-
 	}
-
 }
