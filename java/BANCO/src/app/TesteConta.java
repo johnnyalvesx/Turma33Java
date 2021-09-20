@@ -18,7 +18,7 @@ public class TesteConta {
 		double valorMovimento = 0.00;
 
 		ContaPoupanca cp1 = new ContaPoupanca(32, "2141234", 1300, true, 7);
-		ContaCorrente cc1 = new ContaCorrente(2, "435654", 1700, true, 1);
+		ContaCorrente cc1 = new ContaCorrente(2, "435654", 1700, true, 0);
 		ContaEmpresa cemp1 = new ContaEmpresa(3, "5653634", 0, true, 5000);
 		ContaEstudantil cest1 = new ContaEstudantil(4, "5466858", 0, true, 500);
 		ContaEspecial cesp1 = new ContaEspecial(5, "45323254", 0, true, 2000);
@@ -34,7 +34,7 @@ public class TesteConta {
 		System.out.println("5 - CONTA ESTUDANTIL");
 		System.out.println("6 - SAIR");
 		System.out.println("\n");
-		System.out.print("Digite o código da opção selecionada: ");
+		System.out.print("Digite o código da opção desejada: ");
 		contaEscolhida = in.next().charAt(0);
 
 		if (contaEscolhida == '1') {

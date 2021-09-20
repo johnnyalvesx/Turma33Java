@@ -96,7 +96,6 @@ public class TelaInicial {
 
 			}
 			while (fazerCompra == true) {
-				
 
 				System.out.print("\n\nCONTINUAR COMPRA? [S/N]: ");
 
@@ -110,11 +109,9 @@ public class TelaInicial {
 					p1.compraNova();
 					p1.selecionaProduto();
 					break;
-					
-		}
 
-	}
+				}
+			}
 		}
 	}
 }
-	

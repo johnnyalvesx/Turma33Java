@@ -3,7 +3,7 @@ package entities;
 public class ContaCorrente extends Conta {
 	// atributos
 	private int contadorTalao;
-
+	int contador = 0;
 	// construtor
 
 	public ContaCorrente(int numero, String cpf, double saldo, boolean ativo, int contadorTalao) {
@@ -26,18 +26,38 @@ public class ContaCorrente extends Conta {
 	public void pediTalao(int qtd) {
 
 		if (qtd <= 0) {
-			System.out.println("Não pode inserir número negativo!");
+			System.out.println("Número inválido!");
 		}
-		for (int x = 0; x < qtd; x++) {
-			if (contadorTalao <= 3 && qtd <= 3) {
-				super.debito(30);
-				contadorTalao = contadorTalao + 1;
-			} else if (qtd > 3 || contadorTalao > 3) {
-				System.out.println("Impossivel, limite atingido!!!");
-				break;
-			}
+		contadorTalao = qtd;
+		if (contadorTalao == 1) {
+			super.debito(30);
+			contadorTalao++;
+		} else if (contadorTalao == 2) {
+			super.debito(60);
+			contadorTalao++;
+			;
+		} else if (contadorTalao == 3) {
+			super.debito(90);
+		} else if (contadorTalao > 3) {
+			contadorTalao = 0;
+			System.out.println("Impossível, limite atingido!");
+
 		}
 	}
+
+	// for (int x = 0; x < qtd; x++) {
+
+	// while (contador <= 3) {
+	// contadorTalao = qtd;
+
+	/*
+	 * if (contadorTalao > 3) { System.out.println("Impossível, limite atingido!");
+	 * break; } else { super.debito(30); contadorTalao++; break; }
+	 * 
+	 * }
+	 */
+	// contador++;
+	// }
 
 	@Override
 	public String toString() {

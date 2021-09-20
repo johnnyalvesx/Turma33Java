@@ -242,6 +242,7 @@ public class Produto {
 		carrinho();
 
 	}
+
 	public void compraNova() {
 		cabecalho();
 		String tituloMatriz[] = { "COD \t |", "PRODUTO \t\t |", "VALOR \t |", "ESTOQUE" };
@@ -260,10 +261,7 @@ public class Produto {
 			System.out.print("\n");
 		}
 
-	
-
 	}
-
 
 	public void carrinho() {
 
